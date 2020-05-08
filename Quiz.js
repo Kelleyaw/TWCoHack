@@ -20,38 +20,50 @@ var quiz = $('#quiz'); // Our Quiz div element
 
 displayNext();
 
-// Handeler for next button
-$('#next').on('click', function (e)){
-  e.preventDefault();
+// Handler for the next button
+  $('#next').on('click', function (e) {
+    e.preventDefault();
 
-// Disable handlers while animations play
-if(quiz.is(':animated')){
-  return false;
-}
+    // Suspend click listener during fade animation
+    if(quiz.is(':animated')) {
+      return false;
+    }
+    choose();
 
-choose();
+    // If no user selection, progress is stopped
+    if (isNaN(selections[questionCounter])) {
+      alert('Please make a selection!');
+    } else {
+      questionCounter++;
+      displayNext();
+    }
+  });
 
- // If there is no user selection
-if(isNaN(selections[questionCounter])){
-  alert('please make a selction');
-  } else {
-    questionCounter++;
+  // Click handler for the 'prev' button
+  $('#prev').on('click', function (e) {
+    e.preventDefault();
+
+    // Diable durin animations
+    if(quiz.is(':animated')) {
+      return false;
+    }
+    choose();
+    questionCounter--;
     displayNext();
-  }
-});
+  });
 
-// Handeler for the previous button
-$('#prev').on('click', function (e)){
+// Click handler for the previous button
+  $('#prev').on('click', function (e) {
+    e.preventDefault();
 
-  // Disable handelers during animation
-  if(quiz.is('':animated')){
-    return false;
-  }
-  choose();
-  questionCounter--;
-  displayNext();
-}
-
+    // Disable during animations
+    if(quiz.is(':animated')) {
+      return false;
+    }
+    choose();
+    questionCounter--;
+    displayNext();
+  });
 // Click handler for the 'Start Over' button
 $('#start').on('click', function (e) {
   e.preventDefault();
@@ -66,7 +78,13 @@ $('#start').on('click', function (e) {
 });
 
 // Small Animations (QoL pieces)
-
+  // Animates buttons on hover
+  $('.button').on('mouseenter', function () {
+    $(this).addClass('active');
+  });
+  $('.button').on('mouseleave', function () {
+    $(this).removeClass('active');
+  });
 
 // Creates and returns the div that contains the questions and
 // the answer selections
