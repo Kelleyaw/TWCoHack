@@ -98,7 +98,7 @@ function createQuestion(index) {
   qE.append(header);
 
   // creates paragraph w/ question inside
-  var question = $(<'p'>).append(questions[index].question);
+  var question = $('<p>').append(questions[index].question);
   qE.append(question)
 
   // Creates radio buttons
