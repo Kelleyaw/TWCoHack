@@ -1,6 +1,5 @@
 # TWCoHack
 
-## Reference
 
-### Real-time leaderboard
-https://pusher.com/tutorials/live-leaderboard-preact
+## 05/09 Leaderboard updated 
+
