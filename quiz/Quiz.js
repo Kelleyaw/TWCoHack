@@ -1,5 +1,4 @@
-// The Question List
-(function () {
+(function() {
   var questions = [{
       question: 'Pick "The correct choice"',
       choices: [
@@ -40,11 +39,11 @@
   displayNext();
 
   // Handler for the next button
-  $("#next").on('click', function (e) {
+  $('#next').on('click', function (e) {
     e.preventDefault();
 
     // Suspend click listener during fade animation
-    if (quiz.is(':animated')) {
+    if(quiz.is(':animated')) {
       return false;
     }
     choose();
@@ -62,8 +61,7 @@
   $('#prev').on('click', function (e) {
     e.preventDefault();
 
-    // Disable during animations
-    if (quiz.is(':animated')) {
+    if(quiz.is(':animated')) {
       return false;
     }
     choose();
@@ -75,13 +73,13 @@
   $('#start').on('click', function (e) {
     e.preventDefault();
 
-    if (quiz.is(':animated')) {
+    if(quiz.is(':animated')) {
       return false;
     }
     questionCounter = 0;
     selections = [];
     displayNext();
-    $("#start").hide();
+    $('#start').hide();
   });
 
   // Small Animations (QoL pieces)
@@ -98,7 +96,6 @@
   // the answer selections
   function createQuestion(index) {
     var qE = $('<div>', {
-      // qE is the question element
       id: 'question'
     });
 
@@ -111,7 +108,7 @@
     qE.append(question);
 
     // Creates radio buttons
-    var radioButtons = createButtons(index);
+    var radioButtons = createRadios(index);
     qE.append(radioButtons);
 
     // return the question element with all variables appended on
@@ -125,7 +122,7 @@
     var input = '';
     for (var i = 0; i < questions[index].choices.length; i++) {
       item = $('<li>');
-      input = '<input type="radio" name="answer" value=' + i + '/>';
+      input = '<input type="radio" name="answer" value=' + i + ' />';
       input += questions[index].choices[i];
       item.append(input);
       buttonList.append(item);
@@ -140,29 +137,29 @@
 
   // Displays next requested element
   function displayNext() {
-    quiz.fadeOut(function () {
-      $('#question').remove(); // Remove the question div element
+    quiz.fadeOut(function() {
+      $('#question').remove();
 
-      if (questionCounter < questions.length) {
+      if(questionCounter < questions.length){
         var nextQuestion = createQuestion(questionCounter);
-        quiz.append(nextQuestion).fadeIn(); // Attach the next question and show
+        quiz.append(nextQuestion).fadeIn();
         if (!(isNaN(selections[questionCounter]))) {
           $('input[value='+selections[questionCounter]+']').prop('checked', true);
         }
 
         // Controls for previous button
-        if (questionCounter === 1) {
+        if(questionCounter === 1){
           $('#prev').show();
-        } else if (questionCounter === 0) {
+        } else if(questionCounter === 0){
           $('#prev').hide();
           $('#next').show();
-        } else {
-          var scoreE = displayScore();
-          quiz.append(scoreE).fadeIn();
-          $('#next').hide();
-          $('#previous').hide();
-          $('#start').show();
         }
+      } else {
+        var scoreE = displayScore();
+        quiz.append(scoreE).fadeIn();
+        $('#next').hide();
+        $('#prev').hide();
+        $('#start').show();
       }
     });
   }
@@ -170,7 +167,7 @@
   // Computes score and returns element to be displayed
   // (probably paragraph element)
   function displayScore() {
-    var score = $('<p>', { id: 'question' });
+    var score = $('<p>',{id: 'question'});
 
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
@@ -178,13 +175,8 @@
         numCorrect++;
       }
     }
-    score.append(
-      'You got ' +
-        numCorrect +
-        'questions out of ' +
-        questions.length +
-        'correct!'
-    );
+    score.append('You got ' + numCorrect + ' questions out of ' +
+                 questions.length + ' right!!!');
     return score;
   }
 })();
