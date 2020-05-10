@@ -159,7 +159,7 @@
       if (questionCounter < questions.length) {
         var nextQuestion = createQuestion(questionCounter);
         quiz.append(nextQuestion).fadeIn(); // Attach the next question and show
-        if (!isNaN(selections[questionCounter])) {
+        if (!(isNaN(selections[questionCounter]))) {
           $("input[value=" + selections[questionCounter] + "]").prop(
             "checked",
             true
