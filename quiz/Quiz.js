@@ -103,7 +103,8 @@
     var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qE.append(header);
 
-    // creates paragraph w/ question inside
+    // Creates paragraph w/ question inside
+    // Maybe add this line to header (design)
     var question = $('<p>').append(questions[index].question);
     qE.append(question);
 
@@ -111,7 +112,7 @@
     var radioButtons = createButtons(index);
     qE.append(radioButtons);
 
-    // return the question element with all variables appended on
+    // Return the question element with all variables appended on
     return qE;
   }
 
