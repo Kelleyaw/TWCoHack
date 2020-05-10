@@ -108,7 +108,7 @@
     qE.append(question);
 
     // Creates radio buttons
-    var radioButtons = createRadios(index);
+    var radioButtons = createButtons(index);
     qE.append(radioButtons);
 
     // return the question element with all variables appended on
@@ -151,10 +151,11 @@
         if(questionCounter === 1){
           $('#prev').show();
         } else if(questionCounter === 0){
+
           $('#prev').hide();
           $('#next').show();
         }
-      } else {
+      }else {
         var scoreE = displayScore();
         quiz.append(scoreE).fadeIn();
         $('#next').hide();
