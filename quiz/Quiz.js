@@ -178,7 +178,7 @@
       }
     }
     score.append('You got ' + numCorrect + ' questions out of ' +
-                 questions.length + ' right!!!');
+                 questions.length + ' right');
     return score;
   }
 })();
