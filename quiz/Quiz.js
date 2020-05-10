@@ -52,7 +52,7 @@
 
     // If no user selection, progress is stopped
     if (isNaN(selections[questionCounter])) {
-      alert("Please make a selection");
+      alert('Please make a selection!');
     } else {
       questionCounter++;
       displayNext();
@@ -160,10 +160,7 @@
         var nextQuestion = createQuestion(questionCounter);
         quiz.append(nextQuestion).fadeIn(); // Attach the next question and show
         if (!(isNaN(selections[questionCounter]))) {
-          $("input[value=" + selections[questionCounter] + "]").prop(
-            "checked",
-            true
-          );
+          $('input[value='+selections[questionCounter]+']').prop('checked', true);
         }
 
         // Controls for previous button
