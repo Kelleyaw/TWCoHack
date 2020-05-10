@@ -1,8 +1,7 @@
 // The Question List
 (function () {
-  var questions = [
-    {
-      question: "Pick \"The correct choice\"",
+  var questions = [{
+      question: 'Pick "The correct choice"',
       choices: [
         "The correct choice",
         "The incorrect Choice 1",
@@ -36,48 +35,35 @@
 
   var questionCounter = 0; // This tracks the current question number
   var selections = []; // This is where user choices are stored
-  var quiz = $("#quiz"); // Our Quiz div element
+  var quiz = $('#quiz'); // Our Quiz div element
 
   displayNext();
 
   // Handler for the next button
-  $("#next").on("click", function (e) {
+  $("#next").on('click', function (e) {
     e.preventDefault();
 
     // Suspend click listener during fade animation
-    if (quiz.is(":animated")) {
+    if (quiz.is(':animated')) {
       return false;
     }
     choose();
 
     // If no user selection, progress is stopped
     if (isNaN(selections[questionCounter])) {
-      alert('Please make a selection!');
+      alert('Please make a selection');
     } else {
       questionCounter++;
       displayNext();
     }
   });
 
-  // Click handler for the 'prev' button
-  $("#prev").on("click", function (e) {
-    e.preventDefault();
-
-    // Diable durin animations
-    if (quiz.is(":animated")) {
-      return false;
-    }
-    choose();
-    questionCounter--;
-    displayNext();
-  });
-
   // Click handler for the previous button
-  $("#prev").on("click", function (e) {
+  $('#prev').on('click', function (e) {
     e.preventDefault();
 
     // Disable during animations
-    if (quiz.is(":animated")) {
+    if (quiz.is(':animated')) {
       return false;
     }
     choose();
@@ -86,10 +72,10 @@
   });
 
   // Click handler for the Start Over button
-  $("#start").on("click", function (e) {
+  $('#start').on('click', function (e) {
     e.preventDefault();
 
-    if (quiz.is(":animated")) {
+    if (quiz.is(':animated')) {
       return false;
     }
     questionCounter = 0;
@@ -99,28 +85,29 @@
   });
 
   // Small Animations (QoL pieces)
+
   // Animates buttons on hover
-  $(".button").on("mouseenter", function () {
-    $(this).addClass("active");
+  $('.button').on('mouseenter', function () {
+    $(this).addClass('active');
   });
-  $(".button").on("mouseleave", function () {
-    $(this).removeClass("active");
+  $('.button').on('mouseleave', function () {
+    $(this).removeClass('active');
   });
 
   // Creates and returns the div that contains the questions and
   // the answer selections
   function createQuestion(index) {
-    var qE = $("<div>", {
+    var qE = $('<div>', {
       // qE is the question element
-      id: "question"
+      id: 'question'
     });
 
     // Creates type 2 header
-    var header = $("<h2>Question " + (index + 1) + ":</h2>");
+    var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qE.append(header);
 
     // creates paragraph w/ question inside
-    var question = $("<p>").append(questions[index].question);
+    var question = $('<p>').append(questions[index].question);
     qE.append(question);
 
     // Creates radio buttons
@@ -133,12 +120,12 @@
 
   // Creates a list of the answer choices (as radio inputs)
   function createButtons(index) {
-    var buttonList = $("<ul>");
+    var buttonList = $('<ul>');
     var item;
-    var input = "";
+    var input = '';
     for (var i = 0; i < questions[index].choices.length; i++) {
-      item = $("<li>");
-      input = '<input type="radio" name="answer" value=' + i + "/>";
+      item = $('<li>');
+      input = '<input type="radio" name="answer" value=' + i + '/>';
       input += questions[index].choices[i];
       item.append(input);
       buttonList.append(item);
@@ -154,7 +141,7 @@
   // Displays next requested element
   function displayNext() {
     quiz.fadeOut(function () {
-      $("#question").remove(); // Remove the question div element
+      $('#question').remove(); // Remove the question div element
 
       if (questionCounter < questions.length) {
         var nextQuestion = createQuestion(questionCounter);
@@ -165,16 +152,16 @@
 
         // Controls for previous button
         if (questionCounter === 1) {
-          $("#prev").show();
+          $('#prev').show();
         } else if (questionCounter === 0) {
-          $("#prev").hide();
-          $("#next").show();
+          $('#prev').hide();
+          $('#next').show();
         } else {
           var scoreE = displayScore();
           quiz.append(scoreE).fadeIn();
-          $("#next").hide();
-          $("#previous").hide();
-          $("#start").show();
+          $('#next').hide();
+          $('#previous').hide();
+          $('#start').show();
         }
       }
     });
@@ -183,7 +170,7 @@
   // Computes score and returns element to be displayed
   // (probably paragraph element)
   function displayScore() {
-    var score = $("<p>", { id: "question" });
+    var score = $('<p>', { id: 'question' });
 
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
@@ -192,11 +179,11 @@
       }
     }
     score.append(
-      "You got " +
+      'You got ' +
         numCorrect +
-        "questions out of " +
+        'questions out of ' +
         questions.length +
-        "correct!"
+        'correct!'
     );
     return score;
   }
