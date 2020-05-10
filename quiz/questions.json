@@ -1,0 +1,35 @@
+{
+  quiz:{
+    "q1": {
+    "question": "Pick \"The correct choice\"",
+    "choices": [
+        "The correct choice",
+        "The incorrect Choice 1",
+        "The incorrect Choice 2",
+        "The incorrect Choice 3",
+        "The incorrect Choice 4"
+      ],
+      "correctAnswer": "The correct choice"
+        },
+  "q2": {
+    "question": "What is 10 * 10?",
+    "choices": [1, 10, 100, 1000, 10000],
+    "correctAnswer": 100
+        },
+  "q3": {
+      "question": "What is the square root of pi?",
+      "choices": [3.14, 9001, 1.77, 0, 2.718],
+      "correctAnswer": 1.77
+        },
+  "q4": {
+      "question": "What is 3*6?",
+      "choices": [3, 6, 9, 12, 18],
+      "correctAnswer": 4
+        },
+  "q5": {
+      "question": "What is 8*9?",
+      "choices": [72, 99, 108, 134, 156],
+      "correctAnswer": 0
+        }
+      }
+}

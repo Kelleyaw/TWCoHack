@@ -2,7 +2,7 @@
 (function () {
   var questions = [
     {
-      question: 'Pick "The correct choice"',
+      question: "Pick \"The correct choice\"",
       choices: [
         "The correct choice",
         "The incorrect Choice 1",
