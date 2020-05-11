@@ -1,0 +1,50 @@
+body {
+    font-family: Open Sans;
+    text-align: center;
+}
+
+.button {
+    border:4px solid;
+    border-radius:40%;
+    width: 85px;
+    padding-left:5px;
+    padding-right: 5px;
+    text-align: center;
+    position: relative;
+    float:right;
+    background-color: #DCDCDC;
+    color: black;
+    margin: 0 2px 0 2px;
+}
+
+.button.active {
+    background-color: #F8F8FF;
+    color: #525252;
+}
+
+button {
+    position: relative;
+    float:right;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+}
+
+#container {
+    width:50%;
+    margin:auto;
+    padding: 0 25px 40px 10px;
+    background-color: #212121;
+    border:4px solid #121212;
+    border-radius:5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px #888;
+}
+
+form .learning_mode {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
