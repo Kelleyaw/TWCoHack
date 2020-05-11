@@ -23,12 +23,12 @@
     {
       question: "What is 3*6?",
       choices: [3, 6, 9, 12, 18],
-      correctAnswer: 4
+      correctAnswer: 18
     },
     {
       question: "What is 8*9?",
       choices: [72, 99, 108, 134, 156],
-      correctAnswer: 0
+      correctAnswer: 72
     }
   ];
 
@@ -103,8 +103,7 @@
     var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qE.append(header);
 
-    // Creates paragraph w/ question inside
-    // Maybe add this line to header (design)
+    // creates paragraph w/ question inside
     var question = $('<p>').append(questions[index].question);
     qE.append(question);
 
@@ -112,7 +111,7 @@
     var radioButtons = createButtons(index);
     qE.append(radioButtons);
 
-    // Return the question element with all variables appended on
+    // return the question element with all variables appended on
     return qE;
   }
 
