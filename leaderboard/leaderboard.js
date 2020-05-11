@@ -25,7 +25,8 @@ if(score_on_lboard === 'undefined') {
   leaderboard.push({county:global_county, global_state:state, score:global_numCorrect})
 }
 else {
-  score_on_lboard += global_numCorrect
+ idx = leaderboard.findIndex((x => x.county === global_county))
+ leaderboard[idx].score = leaderboard[idx].score + global_numCorrect
 }
 
 // target the table element in which to add one div for each competitor
