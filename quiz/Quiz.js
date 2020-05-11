@@ -46,17 +46,18 @@
   displayNext();
 
 
-  //Handler for explanation button
-  $('#explaination').on('click', function (e){
+// Handler for the explanation button
+  $('#myBtn').on('click', function (e) {
     e.preventDefault();
 
-    // Suspend click listener during fade Animations
+    // Suspend click listener during fade animation
     if(quiz.is(':animated')) {
       return false;
     }
-
-    if(isNan(selections[questionCounter])){
-      alert('Please make a selection before veiwing the explanation')
+  choose();
+    // If no user selection, progress is stopped
+    if (isNaN(selections[questionCounter])) {
+      alert('Please select an answer before checking the explanation');
     } else {
       displayExpl();
     }
@@ -177,14 +178,14 @@
         } else if(questionCounter === 0){
           $('#prev').hide();
           $('#next').show();
-          $('#explanation').show();
+          $('#myBtn').show();
         }
       }else {
         var scoreE = displayScore();
         quiz.append(scoreE).fadeIn();
         $('#next').hide();
         $('#prev').hide();
-        $('#explanation').hide();
+        $('#myBtn').hide();
         $('#start').show();
       }
     });
@@ -192,43 +193,16 @@
 
 
 function displayExpl() {
-  // Get the modal
-  var modal = document.getElementById("expModal");
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("expBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
   if(questionCounter == 0){
-    $("#expModal .modal-content").html(
-      '<span class=\"close\">&times;</span> <p>According to the Harvard Global Health Institute, if there are less than 10% or fewer positives among the tests conducted, it means that there is enough testing. This is known as the 10% positive benchmark. Indiana currently has around 4,100 tests per day, which is far fewer than the estimated needed by May 15 - 28,000+ tests. Knowing the estimates will guide on knowing how the state is coping with the virus which could affect your decision making process. </p>');
+document.getElementById("content").innerHTML = 'According to the Harvard Global Health Institute, if there are less than 10% or fewer positives among the tests conducted, it means that there is enough testing. This is known as the 10% positive benchmark. Indiana currently has around 4,100 tests per day, which is far fewer than the estimated needed by May 15 - 28,000+ tests. Knowing the estimates will guide on knowing how the state is coping with the virus which could affect your decision making process.';
   } else if(questionCounter == 1){
-    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>According to the CDC, 8 out of 10 deaths reported in the U.S. have been in adults 65 years old and older. It is also important to know the other risky groups through Indiana (Q2) as it would get you prepared. You should also visit How to Protect Yourself by CDC or even the CDC for Precautionary Measures for more information!</p>');
+document.getElementById("content").innerHTML = 'According to the CDC, 8 out of 10 deaths reported in the U.S. have been in adults 65 years old and older. It is also important to know the other risky groups through Indiana (Q2) as it would get you prepared. You should also visit How to Protect Yourself by CDC or even the CDC for Precautionary Measures for more information!';
   } else if (questionCounter == 2){
-    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>Knowing central and trusted sources could not only save your time on researching, but also provide needed help to our front line heroes.</p>');
+document.getElementById("content").innerHTML = 'Knowing central and trusted sources could not only save your time on researching, but also provide needed help to our front line heroes.';
   } else if(questionCounter == 3){
-    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>Governor Eric Holcomb issued an executive order on March 19, stating that no residential eviction proceedings or foreclosure actions may be initiated from 3/19 until the state of emergency has terminated. </p>');
+document.getElementById("content").innerHTML = 'Governor Eric Holcomb issued an executive order on March 19, stating that no residential eviction proceedings or foreclosure actions may be initiated from 3/19 until the state of emergency has terminated.';
   } else if(questionCounter == 4){
-    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>In the file Our Principles To Get Back On Track, the state government said that if Indiana cannot meet these 4 guiding principles, all or portions of the state may need to pause on moving forward, or Hoosiers may return to an earlier stage of the governor’s stay-at-home order.</p>');
-  }
-
-  // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+document.getElementById("content").innerHTML = 'In the file Our Principles To Get Back On Track, the state government said that if Indiana cannot meet these 4 guiding principles, all or portions of the state may need to pause on moving forward, or Hoosiers may return to an earlier stage of the governor’s stay-at-home order.';
   }
 }
 
@@ -244,7 +218,7 @@ function displayExpl() {
         numCorrect++;
       }
     }
-    score.append('You got ' + numCorrect + ' questions out of ' +
+    score.append('You got ' + '5' + ' questions out of ' +
                  questions.length + ' right');
     return score;
   }

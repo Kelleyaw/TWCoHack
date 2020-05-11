@@ -2,6 +2,16 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <title>CodePen - A Pen by  Alex</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
   <title>Covid-19 Quiz</title>
   <link rel="stylesheet" href="./style.css">
 
@@ -28,33 +38,50 @@
     <div class='button' id='prev'><a href='#'>Prev</a></div>
     <div class='button' id='start'> <a href='#'>Start Over</a></div>
 
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <!-- Trigger/Open The Modal -->
+    <div class='button' id='myBtn'><a href='#'>Explanation</a></div>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div id = "modal-body" class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
   </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id='content'>big testing brain</p>
+  </div>
+
 </div>
 
-  </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/quiz/jquery.min.js'></script>
   <script type="text/javascript" src='https://github.com/Kelleyaw/TWCoHack/blob/master/quiz/questions.json'></script>
@@ -64,6 +91,11 @@
 </html>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
 
 </body>
 </html>
