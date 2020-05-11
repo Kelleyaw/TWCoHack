@@ -45,6 +45,7 @@
 
   displayNext();
 
+/*
   //Handler for explanation button
   $('#explaination').on('click', function (e){
     e.preventDefault();
@@ -58,6 +59,7 @@
     } else {
       displayExpl();
     }
+*/
 
   // Handler for the next button
   $('#next').on('click', function (e) {
