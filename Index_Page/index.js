@@ -6,7 +6,6 @@
       return false;
     }
     choose();
-    displayNext();
     $('#learning_mode').hide();
   });
 
@@ -18,13 +17,8 @@
       return false;
     }
     choose();
-    displayNext();
     ('#challenge_mode').hide();
   });
-
-  function displayNext(){
-    // Changes the page to test options
-  }
 
   function choose(){
     var selObj = document.getElementById('singleSelectTextDDJS');
