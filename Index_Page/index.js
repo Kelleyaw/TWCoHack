@@ -1,35 +1,12 @@
-  // Click handler for the Learning Mode button
-  $('#learning_mode).on('click', function (e) {
-    e.preventDefault();
+// var submit = document.getElementById("submit");
 
-    if(quiz.is(':animated')) {
-      return false;
-    }
-    choose();
-    displayNext();
-    $('#learning_mode').hide();
-  });
+// submit.onclick = function(){
+//   var state = document.getElementById('state').value
+//   var county = document.getElementById('county').value
+// }
 
- // Click handler for the Challenge Mode button
-  $('#challenge_mode').on('click', function (e) {
-    e.preventDefault();
+var state = document.getElementById('state').value;
+var county = document.getElementById('county').value;
+export {state, county};
+  
 
-    if(quiz.is(':animated')) {
-      return false;
-    }
-    choose();
-    displayNext();
-    ('#challenge_mode').hide();
-  });
-
-  function displayNext(){
-    // Changes the page to test options
-  }
-
-  function choose(){
-    var selObj = document.getElementById('singleSelectTextDDJS');
-    var selValue = selObj.options[selObj.selectedIndex].text;
-
-    // Setting the value
-    document.getElementById('textFieldTextJS').value = selValue
-  }

@@ -8,31 +8,52 @@
 
   <body>
     <div id = 'container'>
+      <div id = 'title'>
+        <h1>Quiz</h1>
 
-    <div id = 'title'>
-      <h1>Quiz</h1>
-    </div>
+      </div>
+      <div class="first_form">
+        <div style="display: inline-block;" class = "select_state">
+          <p>Select your state: </p>
+        </div>
+        <form style="display: inline-block;">
+          <select>
+            <option value ="none">None</option>
+            <option value="Indiana">Indiana</option>
+            <option value="New York">New York</option>
+            <option value="California">California</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Texas">Texas</option>
+          </select>
+        </form>
+      </div>
+      
+      <div class="second_form">
+        <div style="display: inline-block;" class = "select_county">
+          <p>Select your county: </p>
+        </div>
+        <form style="display: inline-block;">
+          <select>
+            <option value ="none">None</option>
+            <option value="Monroe">Monroe</option>
+            <option value="Lake">Lake</option>
+            <option value="Marion">Marion</option>
+            <option value="Elkhart">Elkhart</option>
+            <option value="Tippacanoe">Tippacanoe</option>
+          </select>
+        </form>
+      </div>
 
-    <form>
-      <select>
-        <option value ="none"> </option>
-        <option value="Indiana">Indiana</option>
-        <option value="New York">New York</option>
-        <option value="California">California</option>
-        <option value="Idaho">Idaho</option>
-        <option value="Texas">Texas</option>
-      </select>
-    </form>
-
-    <form action="#" >
-      <input class="learning_mode" type="submit" value="Learning Mode" style="width:150px;height:30px;"/>
-    </form>
-    
-    <form action="#" >
-      <input class="chellange_mode" type="submit" value="Chellange Mode" style="width:150px;height:30px;"/>
-    </form>
+      <form action="#" >
+        <input class="learning_mode" type="submit" value="Learning Mode" style="width:150px;height:30px;"/>
+      </form>
+      
+      <form action="file:///D:/download/Project/Project/dist/index.html" >
+        <input class="chellange_mode" type="submit" value="Chellange Mode" style="width:150px;height:30px;"/>
+      </form>
 
     <div>
+    <script type='text/javascript' src='index.js'></script>
 
   </body>
 </html>
