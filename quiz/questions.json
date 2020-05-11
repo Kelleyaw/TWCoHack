@@ -1,35 +1,44 @@
 {
   quiz:{
     "q1": {
-    "question": "Pick \"The correct choice\"",
+    "question": "Approximately 18% of Hoosiers were tested positive and 5.75% out of the 18% resulted in death. What do these facts tell us in regards to Indiana State testing capacity?",
     "choices": [
-        "The correct choice",
-        "The incorrect Choice 1",
-        "The incorrect Choice 2",
-        "The incorrect Choice 3",
-        "The incorrect Choice 4"
+        "Sufficient testing kits",
+        "Insufficient testing kits"
       ],
-      "correctAnswer": "The correct choice"
+      "correctAnswer": "Insufficient testing kits"
         },
   "q2": {
-    "question": "What is 10 * 10?",
-    "choices": [1, 10, 100, 1000, 10000],
-    "correctAnswer": 100
+    "question": "What age group has the highest risk of getting infected?",
+    "choices": ["People above 65",
+                "HIV patients",
+                "Homeless people",
+                "Patients with underlying health conditions,",
+                "Pregnant women"],
+    "correctAnswer": "People above 65"
         },
   "q3": {
-      "question": "What is the square root of pi?",
-      "choices": [3.14, 9001, 1.77, 0, 2.718],
-      "correctAnswer": 1.77
+      "question": "During the COVID-19 pandemic, doctors and nurses are working long hours to keep more Hoosiers healthy. Which of the following resources could best help you find out how to support your local hospital?",
+      "choices": ["WHYHOSPITALS",
+                  "A Facebook group created by your neighbor whose friend works in a hospital",
+                  "Local churches",
+                  "County Health Departments"],
+      "correctAnswer": "WHYHOSPITALS"
         },
   "q4": {
-      "question": "What is 3*6?",
-      "choices": [3, 6, 9, 12, 18],
-      "correctAnswer": 18
+      "question": "At the time of state of emergency, could you be evicted, or have the utility service disconnected from not paying your rent/bill?",
+      "choices": ["Yes",
+                  "No"],
+      "correctAnswer": "No"
         },
   "q5": {
-      "question": "What is 8*9?",
-      "choices": [72, 99, 108, 134, 156],
-      "correctAnswer": 72
+      "question": "There are 4 guiding principles that will determine if stages to reopen Indiana will move forward. Which of the following is not part of the principles?",
+      "choices": ["The number of hospitalized COVID-19 patients statewide has decreased for 14 days",
+                  "The state retains its surge capacity for critical care beds and ventilators",
+                  "The state retains the ability to test all Hoosiers who are COVID-19 symptomatic, as well as healthcare workers, essential workers, first responders, and others as delineated on the ISDH website",
+                  "Health officials have systems in place to contact all individuals who test positive for COVID-19 and complete contact tracing",
+                  "0 new deaths have been reported for 14 days"],
+      "correctAnswer": "0 new deaths have been reported for 14 days"
         }
       }
 }
