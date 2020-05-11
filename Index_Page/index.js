@@ -8,5 +8,3 @@
 var state = document.getElementById('state').value;
 var county = document.getElementById('county').value;
 export {state, county};
-  
-
