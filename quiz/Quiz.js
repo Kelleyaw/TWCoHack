@@ -23,7 +23,7 @@
       correctAnswer: "WHYHOSPITALS"
     },
     {
-      question: "At the time of state of emergency, could you be evicted, or have the utility service disconnected from not paying your rent/bill?",
+      question: "During a state of emergency, could you be evicted, or have the utility service disconnected from not paying your rent/bill?",
       choices: ["Yes",
                 "No"],
       correctAnswer: "No"
@@ -45,21 +45,23 @@
 
   displayNext();
 
-/*
+
   //Handler for explanation button
   $('#explaination').on('click', function (e){
     e.preventDefault();
-  }
+
     // Suspend click listener during fade Animations
     if(quiz.is(':animated')) {
       return false;
     }
+
     if(isNan(selections[questionCounter])){
       alert('Please make a selection before veiwing the explanation')
     } else {
       displayExpl();
     }
-*/
+  });
+
 
   // Handler for the next button
   $('#next').on('click', function (e) {
@@ -170,24 +172,25 @@
           $('input[value='+selections[questionCounter]+']').prop('checked', true);
         }
 
-        // Controls for previous button
         if(questionCounter === 1){
           $('#prev').show();
         } else if(questionCounter === 0){
           $('#prev').hide();
           $('#next').show();
+          $('#explanation').show();
         }
       }else {
         var scoreE = displayScore();
         quiz.append(scoreE).fadeIn();
         $('#next').hide();
         $('#prev').hide();
+        $('#explanation').hide();
         $('#start').show();
       }
     });
   }
 
-/*
+
 function displayExpl() {
   // Get the modal
   var modal = document.getElementById("expModal");
@@ -197,6 +200,19 @@ function displayExpl() {
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
+
+  if(questionCounter == 0){
+    $("#expModal .modal-content").html(
+      '<span class=\"close\">&times;</span> <p>According to the Harvard Global Health Institute, if there are less than 10% or fewer positives among the tests conducted, it means that there is enough testing. This is known as the 10% positive benchmark. Indiana currently has around 4,100 tests per day, which is far fewer than the estimated needed by May 15 - 28,000+ tests. Knowing the estimates will guide on knowing how the state is coping with the virus which could affect your decision making process. </p>');
+  } else if(questionCounter == 1){
+    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>According to the CDC, 8 out of 10 deaths reported in the U.S. have been in adults 65 years old and older. It is also important to know the other risky groups through Indiana (Q2) as it would get you prepared. You should also visit How to Protect Yourself by CDC or even the CDC for Precautionary Measures for more information!</p>');
+  } else if (questionCounter == 2){
+    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>Knowing central and trusted sources could not only save your time on researching, but also provide needed help to our front line heroes.</p>');
+  } else if(questionCounter == 3){
+    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>Governor Eric Holcomb issued an executive order on March 19, stating that no residential eviction proceedings or foreclosure actions may be initiated from 3/19 until the state of emergency has terminated. </p>');
+  } else if(questionCounter == 4){
+    $("#expModal .modal-content").html('<span class=\"close\">&times;</span> <p>In the file Our Principles To Get Back On Track, the state government said that if Indiana cannot meet these 4 guiding principles, all or portions of the state may need to pause on moving forward, or Hoosiers may return to an earlier stage of the governor’s stay-at-home order.</p>');
+  }
 
   // When the user clicks on the button, open the modal
   btn.onclick = function() {
@@ -215,7 +231,7 @@ function displayExpl() {
     }
   }
 }
-*/
+
 
   // Computes score and returns element to be displayed
   // (probably paragraph element)

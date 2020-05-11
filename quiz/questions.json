@@ -26,7 +26,7 @@
       "correctAnswer": "WHYHOSPITALS"
         },
   "q4": {
-      "question": "At the time of state of emergency, could you be evicted, or have the utility service disconnected from not paying your rent/bill?",
+      "question": "During a state of emergency, could you be evicted, or have the utility service disconnected from not paying your rent/bill?",
       "choices": ["Yes",
                   "No"],
       "correctAnswer": "No"
