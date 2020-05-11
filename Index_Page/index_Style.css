@@ -44,7 +44,15 @@ button {
     box-shadow: 5px 5px 5px #888;
 }
 
+
+.select_state {
+    margin-right: 10px;
+}
+.select_county {
+    margin-right: 10px;
+}
+
 form .learning_mode {
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 20px;
 }
