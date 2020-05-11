@@ -44,11 +44,7 @@ button {
     box-shadow: 5px 5px 5px #888;
 }
 
-#learning_mode {
-    display:none;
-}
-
-#challenge_mode {
-    display:none;
-    width: 90px;
+form .learning_mode {
+    margin-top: 35px;
+    margin-bottom: 20px;
 }
