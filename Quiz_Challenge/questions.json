@@ -1,0 +1,41 @@
+{
+  quiz:{
+    "q1": {
+    "question": "If Peter, who is from the Monroe country in Indiana, were given a more flexible Stay at Home order by the state but a much stricter Stay at Home order by the local government where he is not allowed to go out freely, who should he follow?",
+    "choices": ["Local Government",
+              "State",
+              "CDC",
+              "The President"],
+      "correctAnswer": "Local Government"
+        },
+  "q2": {
+    "question": "John is currently having symptoms of other chronic diseases such as difficulty breathing or high fever, what should he do after knowing vital information from local resources such as Indiana Government Department of Health and WHYHOSPITALS?",
+    "choices": ["Go directly to the hospital without consulting or calling 911",
+              "Call and consult with 911 or health provider but DO NOT to go to the nearest hospital because of the fear getting or spreading coronavirus",
+              "Try solving the problem with his loved ones by taking home remedies or medication",
+              "Call and consult with 911 or health provider and depends on the severity of the symptoms, decide on whether he should go to the hospital or not,"],
+    "correctAnswer": "Indiana State Department of Health"
+        },
+  "q3": {
+      "question": "You found out that you might be infected with the virus but then you are staying with your grandparents who are over 80 located in a rural area. Which of the following is improper?",
+      "choices": ["Call and consult with 911 or health provider",
+                "Isolate yourself completely from your grandparents",
+                "Get yourself tested",
+                "Do not get tested because you are sure that you isolated yourself well"],
+      "correctAnswer": "Do not get tested because you are sure that you isolated yourself well"
+        },
+  "q4": {
+      "question": "Your utility service was disconnected by the service provider because you were laid off and cannot pay your rent and utility fee during this COVID-19 pandemic. Is your utility service provider’s behavior legal? Where could you find resources to help yourself and get utility service reconnected?",
+      "choices": ["No; Indiana State Department of Health",
+      "No; Indiana211",
+      "Yes; FindHelp",
+      "Yes; Resource Roundup"],
+      "correctAnswer": "No; Indiana211"
+        },
+  "q5": {
+      "question": "",
+      "choices": [],
+      "correctAnswer": ""
+        }
+      }
+}
