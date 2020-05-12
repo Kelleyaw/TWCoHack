@@ -30,11 +30,6 @@
       "Yes; FindHelp",
       "Yes; Resource Roundup"],
       correctAnswer: "No; Indiana211"
-    },
-    {
-        question: "",
-        choices: [],
-        correctAnswer: ""
     }
   ];
 
