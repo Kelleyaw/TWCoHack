@@ -10,10 +10,10 @@
 
 
 
-一）将项目下载到“下载”目录（这应该是默认的）。
+一）下載此專案至本地端。
 
-二）将文件夹解压缩到建议的路径（它应该仍在下载文件夹中）
+二）解壓縮此專案。
 
-三）index.html、quizz.html、quizz_challenge.html和learning_select.html文件包含需要但当前不需要指向计算机上本地目录的文件路径。要实现这一点，只需使用记事本或任何其他文本编辑软件打开这些文件，找到“C:\ Users\Username\Downloads\…”的任何实例，然后用本地计算机的用户名替换“Username”。例如，我的计算机用户名是“Alexander”，我会将“C:\ Users\username\Downloads\…”更改为“C:\ Users\Alexander\Downloads\…”。
+三）index.html、quizz.html、quizz_challenge.html和learning_select.html等檔案內需要正確的本地檔案路徑連結。要達到此目的，只需使用記事本或任何其他文本編輯軟體打開這些檔案，找到本機檔案路徑，例如“C:\ Users\Username\Downloads\…”，然后用本機的用户名替換“Username”。例如，我的本機用户名是“Alexander”，我會將“C:\ Users\username\Downloads\…”更改為“C:\ Users\Alexander\Downloads\…”。
 
-四）导航到Index_Page目录并使用Google Chrome优先打开“Index.html”。
+四）到Index_Page目錄並使用Google Chrome打開“Index.html”。
